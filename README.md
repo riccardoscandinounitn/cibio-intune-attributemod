@@ -1,25 +1,26 @@
-# cibio-intune-attributemod
-Powershell script to modify Intune attributets of multiple devices.
-[NOTA] VibeCodato piu' modifiche manuali.
+# Intune Attributes modifiers
+Powershell script per modificare extensionAttributes di una o piu' macchine Intune/EntraID.
 
-## I/O Description
+Permette di modificare vari extension Attributes di macchine Intune tramite cli tool `Mg.Graph`.
 
-[INPUT] Prende path ad un CSV con struttura:
+## Getting started
 
->        searchName,         displayName,  extensionAttribute1,  extensionAttribute2,  extensionAttribute3,  extensionAttribute4,
->      CIBIO-TEST-1,  CIBIO-LABMGMT-PROV,          40000003647,                CIBIO,                     ,            cibiotest,
->      CIBIO-TEMP-2,  CIBIO-LABMGMT-SONN,          40000002448,                CIBIO,                     ,                     ,
-> CIBIO-LABMGMT-ARR,                    ,          40000004208,                CIBIO,                     ,                     ,
-> etc.
+Prende path ad un CSV con struttura:
 
-[OUTPUT] Cerca per $searchName macchina su Mg.Graph e aggiorna dispositivo con gli attributi specificati
+```
+       searchName,  extensionAttribute1,  extensionAttribute2,  extensionAttribute3,  extensionAttribute4,  extensionAttribute5
+     CIBIO-TEST-1,                xxxxx,                xxxxx,                xxxxx,                xxxxx,                xxxxx
+     CIBIO-TEST-2,                xxxxx,                xxxxx,                xxxxx,                xxxxx,                xxxxx
+```
+
+Cerca per `$searchName` macchina su `Mg.Graph` e aggiorna dispositivo con gli attributi specificati
+
 >[!Warning]
 > extensionAttribute* se assente viene RIMOSSO dal device.
 
 ## Usage
-Aprire PowerShell come amministratore (run as administrator), raggiungere posizione file corrente
-            e digitare il seguente comando:
+Aprire PowerShell come amministratore (run as administrator), raggiungere posizione script e digitare il seguente comando:
 
-    ```
+```
     .\Update-EntraDevices.ps1 -CsvPath "C:\percorso\dispositivi.csv"
-    ```
+```

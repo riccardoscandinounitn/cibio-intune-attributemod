@@ -24,7 +24,7 @@ Write-Host "[>] Trovate $($csvData.Count) righe nel file CSV. Inizio elaborazion
 
 # Elaborazione dispositivi
 foreach ($row in $csvData) {
-    $searchName = $row.searchName ? $row.searchName.Trim() : $null
+    $searchName = if ($row.searchName) { $row.searchName.Trim() } else { $null }
 
     if ([string]::IsNullOrWhiteSpace($searchName)) {
         Write-Warning "[--] Riga saltata: il campo 'searchName' è vuoto."

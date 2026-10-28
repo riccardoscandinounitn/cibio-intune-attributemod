@@ -25,3 +25,11 @@ identificare percorso a nuovo `csv` target e digitare il seguente comando:
 ```
     .\Update-EntraDevices.ps1 -CsvPath ".\devices.csv"
 ```
+
+>[!Warning]
+> In caso di errore al lancio del script del genere _non e' possibile run script per questioni sicurezza_ bisogna forzare esecuzione.
+> Digitare il comando:
+> ```
+> Set-ExecutionPolicy Bypass -Scope Process -Force
+> ```
+> E rilanciare script.

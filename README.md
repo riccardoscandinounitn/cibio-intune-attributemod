@@ -19,8 +19,9 @@ Cerca per `$searchName` macchina su `Mg.Graph` e aggiorna dispositivo con gli at
 > extensionAttribute* se assente viene RIMOSSO dal device.
 
 ## Usage
-Aprire PowerShell come amministratore (run as administrator), raggiungere posizione script e digitare il seguente comando:
+Aprire PowerShell come amministratore (run as administrator), raggiungere posizione script, compilare il file `devices.csv` o
+identificare percorso a nuovo `csv` target e digitare il seguente comando:
 
 ```
-    .\Update-EntraDevices.ps1 -CsvPath "C:\percorso\dispositivi.csv"
+    .\Update-EntraDevices.ps1 -CsvPath ".\devices.csv"
 ```
